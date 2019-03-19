@@ -49,47 +49,47 @@ function myFunction() {
     console.log("myFunction");
 }
 ;
-window.onload = function () {
-    var el = document.getElementById('content');
-    var greeter = new Greeter(el);
-    greeter.start();
-    //document.getElementById("first").addEventListener("click", myFunction);
-    //firstFunction
-    //function convertFromCelsius() {
-    //    if (cels.value) {
-    //        farenh.value = (+cels.value * 1.8 + 32).toFixed(3);
-    //        kelv.value = (+cels.value + 273.15).toFixed(3);
-    //    }
-    //    else {
-    //        farenh.value = "";
-    //        kelv.value = "";
-    //    }
-    //}
-    //function convertFromFarenheit() {
-    //    if (farenh.value) {
-    //        cels.value = ((+farenh.value - 32) / 1.8).toFixed(3);
-    //        kelv.value = (+cels.value + 273.15).toFixed(3);
-    //    }
-    //    else {
-    //        cels.value = "";
-    //        kelv.value = "";
-    //    }
-    //}
-    //function convertFromKelvin() {
-    //    if (kelv.value) {
-    //        cels.value = (+kelv.value - 273.15).toFixed(3);
-    //        farenh.value = (+cels.value * 1.8 + 32).toFixed(3);
-    //    }
-    //    else {
-    //        cels.value = "";
-    //        farenh.value = "";
-    //    }
-    //}       
-    function mathOp(x, y, operation) {
-        var result = operation(x, y);
-        return result;
-    }
-    console.log(mathOp(10, 20, function (x, y) { return x + y; })); // 30 
-    console.log(mathOp(10, 20, function (x, y) { return x * y; })); // 200 
-};
+//window.onload = () => {
+//    //var el = document.getElementById('content');
+//    //var greeter = new Greeter(el);
+//    //greeter.start();
+//    //document.getElementById("first").addEventListener("click", myFunction);
+//    //firstFunction
+//    //function convertFromCelsius() {
+//    //    if (cels.value) {
+//    //        farenh.value = (+cels.value * 1.8 + 32).toFixed(3);
+//    //        kelv.value = (+cels.value + 273.15).toFixed(3);
+//    //    }
+//    //    else {
+//    //        farenh.value = "";
+//    //        kelv.value = "";
+//    //    }
+//    //}
+//    //function convertFromFarenheit() {
+//    //    if (farenh.value) {
+//    //        cels.value = ((+farenh.value - 32) / 1.8).toFixed(3);
+//    //        kelv.value = (+cels.value + 273.15).toFixed(3);
+//    //    }
+//    //    else {
+//    //        cels.value = "";
+//    //        kelv.value = "";
+//    //    }
+//    //}
+//    //function convertFromKelvin() {
+//    //    if (kelv.value) {
+//    //        cels.value = (+kelv.value - 273.15).toFixed(3);
+//    //        farenh.value = (+cels.value * 1.8 + 32).toFixed(3);
+//    //    }
+//    //    else {
+//    //        cels.value = "";
+//    //        farenh.value = "";
+//    //    }
+//    //}       
+//    function mathOp(x: number, y: number, operation: (a: number, b: number) => number): number {
+//        let result = operation(x, y);
+//        return result;
+//    }
+//    console.log(mathOp(10, 20, (x, y) => x + y)); // 30 
+//    console.log(mathOp(10, 20, (x, y) => x * y)); // 200 
+//};
 //# sourceMappingURL=app.js.map
