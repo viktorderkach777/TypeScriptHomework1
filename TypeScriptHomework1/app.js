@@ -1,3 +1,4 @@
+/// <reference path="scripts/typings/jquery/jquery.d.ts" />
 var Greeter = /** @class */ (function () {
     function Greeter(element) {
         this.element = element;
@@ -43,13 +44,32 @@ function firstFunction() {
     console.log(resultString + " " + typeof resultString);
 }
 ;
-function secondFunction() {
-    var fr = document.getElementById('first').value;
-    var sc = document.getElementById("second")["value"];
-    var th = document.getElementById("third")["value"];
-    var list = [fr, sc, th];
+function secondFunction(getFn, algoFn, setFn) {
+    //let fr = (<HTMLInputElement>document.getElementById('first')).value;
+    //let sc = document.getElementById("second")["value"];
+    //let th = document.getElementById("third")["value"];    
+    //let list: string[] = [fr, sc, th];
+    setFn(algoFn(getFn()));
+    console.log($('#first').val());
+    //let list = GetList();
+    //let resString = "";
+    //let maxNum = Math.max(list[0].length, list[1].length, list[2].length);   
+    //for (var i = 0; i < maxNum; i++) {
+    //    for (var j = 0; j < list.length; j++) {
+    //        if (list[j].length > i) {
+    //            resString += list[j][i];               
+    //        }
+    //    }        
+    //} 
+    //let resString = Func2(list);
+    //SetList(resString);
+    //(<HTMLInputElement>document.getElementById('result')).value = resString;
+    //console.log(resString);
+}
+;
+function Func2(list) {
     var resString = "";
-    var maxNum = Math.max(fr.length, sc.length, th.length);
+    var maxNum = Math.max(list[0].length, list[1].length, list[2].length);
     for (var i = 0; i < maxNum; i++) {
         for (var j = 0; j < list.length; j++) {
             if (list[j].length > i) {
@@ -57,8 +77,18 @@ function secondFunction() {
             }
         }
     }
+    return resString;
+}
+function SetList(resString) {
     document.getElementById('result').value = resString;
     console.log(resString);
+}
+function GetList() {
+    var fr = document.getElementById('first').value;
+    var sc = document.getElementById("second")["value"];
+    var th = document.getElementById("third")["value"];
+    var list = [fr, sc, th];
+    return list;
 }
 ;
 function thirdFunction() {
