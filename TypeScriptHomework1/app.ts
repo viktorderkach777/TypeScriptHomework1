@@ -39,22 +39,86 @@ function greet(elementId) {
 //    fr = (<HTMLInputElement>document.getElementById('first')).value;
 //};
 
-let fr, sc, th;
+//let fr, sc, th;
+
+//function GetFunction(idName:string): void {
+
+//    let fr = (<HTMLInputElement>document.getElementById(idName)).value;
+//    console.log(fr + " " + typeof fr);   
+//};
+
+
+
 
 function firstFunction(): void {  
    
-    fr = document.getElementById("first").["value"];
-    console.log(fr + " " + typeof fr);
+    let fr = (<HTMLInputElement>document.getElementById('first')).value;
+    let sc = document.getElementById("second")["value"];
+    let th = document.getElementById("third")["value"];
+   
+
+    let resultString = (fr + sc + th).toLocaleUpperCase();
+
+    (<HTMLInputElement>document.getElementById('result')).value = resultString;
+    console.log(resultString + " " + typeof resultString);
 };
 
 function secondFunction(): void {
-    sc = document.getElementById("second")["value"];
-    console.log(sc);
+    let fr = (<HTMLInputElement>document.getElementById('first')).value;
+    let sc = document.getElementById("second")["value"];
+    let th = document.getElementById("third")["value"];    
+
+    let list: string[] = [fr, sc, th];
+    let resString = "";
+    let maxNum = Math.max(fr.length, sc.length, th.length);   
+
+    for (var i = 0; i < maxNum; i++) {
+
+        for (var j = 0; j < list.length; j++) {
+
+            if (list[j].length > i) {
+                resString += list[j][i];               
+            }
+        }        
+    }    
+
+    (<HTMLInputElement>document.getElementById('result')).value = resString;
+    console.log(resString);
 };
 
 function thirdFunction(): void {
-    th = document.getElementById("third")["value"];
-    console.log(th);
+    let fr = (<HTMLInputElement>document.getElementById('first')).value;
+    let sc = document.getElementById("second")["value"];
+    let th = document.getElementById("third")["value"];
+
+    let list: string[] = [fr, sc, th];
+   
+
+    //function onlyUnique(value, index, self) {
+    //    return self.indexOf(value) === index;
+    //}
+
+    function uniques(arr) {
+        var a = [];
+        for (var i = 0, l = arr.length; i <= l; i++)
+            if (a.indexOf(arr[i]) === -1 && arr[i] !== '')
+                a.push(arr[i]);
+        return a;
+    }
+   
+   
+    //var uniq = list.filter(onlyUnique);
+
+    //let resString = "";
+    
+
+    //for (var i = 0; i < list.length; i++) {
+    //    console.log(split(uniques[i]));
+    //}
+
+
+    //(<HTMLInputElement>document.getElementById('result')).value = resString;
+    //console.log(resString);
 };
 
 function myFunction(): void {
@@ -65,61 +129,61 @@ function myFunction(): void {
 
 
 
-//window.onload = () => {
-//    //var el = document.getElementById('content');
-//    //var greeter = new Greeter(el);
-//    //greeter.start();
+window.onload = () => {
+    //var el = document.getElementById('content');
+    //var greeter = new Greeter(el);
+    //greeter.start();
 
    
    
    
          
-//    //document.getElementById("first").addEventListener("click", myFunction);
+    //document.getElementById("first").addEventListener("click", myFunction);
    
-//    //firstFunction
+    //firstFunction
 
-//    //function convertFromCelsius() {
-//    //    if (cels.value) {
-//    //        farenh.value = (+cels.value * 1.8 + 32).toFixed(3);
-//    //        kelv.value = (+cels.value + 273.15).toFixed(3);
-//    //    }
-//    //    else {
-//    //        farenh.value = "";
-//    //        kelv.value = "";
-//    //    }
-//    //}
+    //function convertFromCelsius() {
+    //    if (cels.value) {
+    //        farenh.value = (+cels.value * 1.8 + 32).toFixed(3);
+    //        kelv.value = (+cels.value + 273.15).toFixed(3);
+    //    }
+    //    else {
+    //        farenh.value = "";
+    //        kelv.value = "";
+    //    }
+    //}
 
-//    //function convertFromFarenheit() {
+    //function convertFromFarenheit() {
 
-//    //    if (farenh.value) {
-//    //        cels.value = ((+farenh.value - 32) / 1.8).toFixed(3);
-//    //        kelv.value = (+cels.value + 273.15).toFixed(3);
-//    //    }
-//    //    else {
-//    //        cels.value = "";
-//    //        kelv.value = "";
-//    //    }
-//    //}
+    //    if (farenh.value) {
+    //        cels.value = ((+farenh.value - 32) / 1.8).toFixed(3);
+    //        kelv.value = (+cels.value + 273.15).toFixed(3);
+    //    }
+    //    else {
+    //        cels.value = "";
+    //        kelv.value = "";
+    //    }
+    //}
 
-//    //function convertFromKelvin() {
+    //function convertFromKelvin() {
 
-//    //    if (kelv.value) {
-//    //        cels.value = (+kelv.value - 273.15).toFixed(3);
-//    //        farenh.value = (+cels.value * 1.8 + 32).toFixed(3);
-//    //    }
-//    //    else {
-//    //        cels.value = "";
-//    //        farenh.value = "";
-//    //    }
-//    //}       
+    //    if (kelv.value) {
+    //        cels.value = (+kelv.value - 273.15).toFixed(3);
+    //        farenh.value = (+cels.value * 1.8 + 32).toFixed(3);
+    //    }
+    //    else {
+    //        cels.value = "";
+    //        farenh.value = "";
+    //    }
+    //}       
 
 
 
-//    function mathOp(x: number, y: number, operation: (a: number, b: number) => number): number {
+    function mathOp(x: number, y: number, operation: (a: number, b: number) => number): number {
 
-//        let result = operation(x, y);
-//        return result;
-//    }
-//    console.log(mathOp(10, 20, (x, y) => x + y)); // 30 
-//    console.log(mathOp(10, 20, (x, y) => x * y)); // 200 
-//};
+        let result = operation(x, y);
+        return result;
+    }
+    console.log(mathOp(10, 20, (x, y) => x + y)); // 30 
+    console.log(mathOp(10, 20, (x, y) => x * y)); // 200 
+};
